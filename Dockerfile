@@ -17,6 +17,7 @@ RUN if [ "$(uname -m)" = "x86_64" ]; then export PLATFORM=amd64 ; \
 	&& wget --no-check-certificate https://github.com/fatedier/frp/releases/download/v${VERSION}/frp_${VERSION}_linux_${PLATFORM}.tar.gz \
 	&& tar xzf frp_${VERSION}_linux_${PLATFORM}.tar.gz \
 	&& cd frp_${VERSION}_linux_${PLATFORM} \
+	&& wget -O frps.toml https://raw.githubusercontent.com/jackloves111/frps/refs/heads/master/frps.toml \
 	&& mkdir /frp \
 	&& mv frps frps.toml /frp \
 	&& cd .. \
